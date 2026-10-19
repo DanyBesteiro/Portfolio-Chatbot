@@ -16,7 +16,8 @@ router = APIRouter()
 
 
 class ChatRequest(BaseModel):
-    message: str = Field(min_length=1, max_length=2000)
+    message: str = Field(min_length=1, max_length=2000),
+    language: str = Field(min_length=2, max_length=2),
     conversation_id: str | None = None
 
 async def verify_portfolio_token(x_portfolio_token: str = Header(default=""),) -> None:
@@ -33,11 +34,13 @@ async def verify_portfolio_token(x_portfolio_token: str = Header(default=""),) -
 @router.post("/chat", dependencies=[Depends(verify_portfolio_token)])
 async def chat(request: ChatRequest):
     try:
-        chat_model = ChatOpenRouter(model="liquid/lfm-2.5-2.6b:free", temperature=0.9)
+        chat_model = ChatOpenRouter(model=os.getenv("OPENROUTER_MODEL", ""), temperature=0.3)
         prompt_template = get_prompt(request.message)
+
+        language = 'inglés' if request.language == 'en' else 'español'
         
-        cadena = prompt_template | chat_model
-        response = cadena.invoke({})
+        chain = prompt_template | chat_model
+        response = chain.invoke({"language": language})
 
         return {
             "response": f"{response.content}",
