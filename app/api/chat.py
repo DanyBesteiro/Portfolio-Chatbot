@@ -40,16 +40,17 @@ async def chat(request: ChatRequest):
         
         chat_model = ChatOpenRouter(
             model=model_name, 
-            temperature=0.3,
-            timeout=60_000,
-            max_retries=0,
-            max_tokens=int(os.getenv("CHATBOT_MAX_TOKENS", 500))
+            temperature=os.getenv("OPENROUTER_TEMPERATURE", 0.5),
+            #timeout=10,
+            #max_retries=0,
+            #max_tokens=int(os.getenv("CHATBOT_MAX_TOKENS", 500))
         )
         
         system_prompt = get_system_prompt(request.message)
         prompt_template = get_prompt()
 
         chain = prompt_template | chat_model
+
         response = chain.invoke({
             "system_prompt": system_prompt,
             "message": request.message,
@@ -127,10 +128,6 @@ def get_system_prompt(message: str) -> str:
 
     chat_config = prompt["chat"]
 
-    print("Claves de chat:", chat_config.keys())
-    print("Categorías:", chat_config.get("categories", {}).keys())
-    print("Categoría detectada:", classify_question(message))
-
     system_prompt = chat_config["base"]
     category = classify_question(message)
 
@@ -146,6 +143,5 @@ def get_system_prompt(message: str) -> str:
         "Si no encuentras la respuesta, indícalo con claridad.\n\n"
         f"{profile}"
     )
-
 
 
