@@ -40,10 +40,7 @@ async def chat(request: ChatRequest):
         
         chat_model = ChatOpenRouter(
             model=model_name, 
-            temperature=os.getenv("OPENROUTER_TEMPERATURE", 0.5),
-            #timeout=10,
-            #max_retries=0,
-            #max_tokens=int(os.getenv("CHATBOT_MAX_TOKENS", 500))
+            temperature=os.getenv("OPENROUTER_TEMPERATURE", 0.5)
         )
         
         system_prompt = get_system_prompt(request.message)
