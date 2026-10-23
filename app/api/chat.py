@@ -62,7 +62,7 @@ async def chat(request: ChatRequest):
         traceback.print_exc()
         raise HTTPException(
             status_code=502,
-            detail="No se ha podido obtener respuesta del proveedor de IA: {str(e)}",
+            detail="No se ha podido obtener respuesta del proveedor de IA:" + str(e),
         )
 
 def get_prompt() -> ChatPromptTemplate:
