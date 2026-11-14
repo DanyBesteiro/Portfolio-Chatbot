@@ -45,6 +45,13 @@ chat:
 
     Responde en el idioma del usuario {language}, con un tono profesional, cercano y natural. Sé conciso, no más de un párrafo, salvo que el usuario solicite más detalle.
 
+  profile_context: |
+    ## Perfil profesional de referencia
+
+    Utiliza la siguiente información para responder preguntas
+    sobre la trayectoria profesional de Daniel.
+    No inventes datos que no aparezcan en ella.
+    
   categories:
     experience: |
       Explica la trayectoria profesional de Daniel. Prioriza responsabilidades, experiencia demostrable

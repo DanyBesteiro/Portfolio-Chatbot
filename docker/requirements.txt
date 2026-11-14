@@ -1,7 +1,17 @@
-fastapi
-langchain
-langchain-core
-langchain-community
-langgraph
-langchain-openrouter
-uvicorn[standard]
+# API
+fastapi==0.162.6
+httpx==0.28.1
+uvicorn[standard]==0.54.0
+
+# LLM / AI
+langchain==1.5.0
+langchain-core==1.8.0
+langgraph==1.2.21
+langchain-openrouter==0.2.9
+
+# Configuration
+PyYAML==6.0.3
+
+# Testing
+pytest==9.2.0
+pytest-asyncio==1.5.0
