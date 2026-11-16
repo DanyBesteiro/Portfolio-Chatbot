@@ -20,12 +20,12 @@ class ChatService:
             temperature=float(os.getenv("OPENROUTER_TEMPERATURE", "0.5"))
         )
 
+        self.chain = self.prompt_template | self.chat_model
+
     async def generate(self, message: str, language: str) -> str:
         system_prompt = self.prompt_manager.get_system_prompt(message)
 
-        chain = self.prompt_template | self.chat_model
-
-        response = await chain.ainvoke({
+        response = await self.chain.ainvoke({
             "system_prompt": system_prompt,
             "message": message,
             "language": "inglés" if language == "en" else "español"

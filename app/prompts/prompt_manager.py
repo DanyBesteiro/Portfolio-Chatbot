@@ -7,23 +7,58 @@ class PromptManager:
 
     CATEGORIES = {
         "technologies": [
-            "tecnología", "tecnologías", "stack",
-            "lenguaje", "php", "symfony", "docker",
-            "doctrine", "postgresql", "mysql", "api",
-            "programación", "framework", "python", "django"
+            "tecnología", "tecnologías", "lenguaje", "lenguajes",
+            "framework", "frameworks", "herramientas", "stack",
+            "programación", "programar", "backend", "frontend",
+            "base de datos", "bases de datos", "arquitectura",
+
+            "technology", "technologies", "programming language",
+            "programming languages", "framework", "frameworks",
+            "tools", "tech stack", "technology stack",
+            "programming", "backend", "back-end", "frontend",
+            "front-end", "database", "databases", "architecture",
+            "software stack", "technical skills",
         ],
+
         "projects": [
-            "proyecto", "censa", "marinai",
-            "portfolio-chatbot", "portfolio chatbot",
+            "proyecto", "proyectos", "portfolio", "portafolio",
+            "aplicación", "aplicaciones", "desarrollo",
+            "censa", "marinai", "chatbot",
+
+            "project", "projects", "portfolio",
+            "application", "applications", "app",
+            "development", "built", "created",
+            "developed", "personal project", "side project",
+            "censa", "marinai", "chatbot",
         ],
+
         "ai": [
-            "inteligencia artificial", "ia",
-            "langgraph", "llm", "openrouter",
-            "agentes", "automatización", "modelo de lenguaje",
+            "inteligencia artificial", "ia", "llm", "llms",
+            "modelo de lenguaje", "modelos de lenguaje",
+            "agente", "agentes", "rag", "langchain",
+            "langgraph", "machine learning", "automatización",
+
+            "artificial intelligence", "ai", "llm", "llms",
+            "large language model", "large language models",
+            "language model", "language models",
+            "agent", "agents", "ai agent", "ai agents",
+            "rag", "retrieval augmented generation",
+            "langchain", "langgraph", "machine learning",
+            "deep learning", "automation", "generative ai",
+            "prompt engineering", "mcp", "model context protocol",
         ],
+
         "experience": [
-            "experiencia", "trayectoria", "empresa",
-            "responsabilidades", "carrera profesional",
+            "experiencia", "trayectoria", "carrera",
+            "perfil profesional", "trabajo", "empresa",
+            "años de experiencia", "responsabilidades",
+
+            "experience", "professional experience",
+            "career", "career path", "background",
+            "professional background", "work history",
+            "employment history", "years of experience",
+            "responsibilities", "previous roles",
+            "previous jobs", "professional profile",
         ],
     }
 

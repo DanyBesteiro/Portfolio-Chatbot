@@ -1,9 +1,3 @@
-## Contactar
-
-mail:jdbesteiro@hotmail.com
-
-LinkedIn: www.linkedin.com/in/daniel- besteiro-rodriguez
-
 ## Languages
 
 Inglés (Professional Working) Español (Native or Bilingual)
